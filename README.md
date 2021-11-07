@@ -11,3 +11,6 @@ make start-docker
 ```
 make start
 ```
+
+# TODO
+- [ ] Add realtime subscriptions with GraphQL and WS
