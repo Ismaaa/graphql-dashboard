@@ -43,6 +43,7 @@ const apolloServer = new ApolloServer({
   resolvers,
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
+
 const startServer = apolloServer.start();
 
 export default async function handler(
