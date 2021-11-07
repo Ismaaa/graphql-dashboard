@@ -1,5 +1,5 @@
 {
-  "name": "realtime-graphql-dashboard",
+  "name": "graphql-dashboard",
   "private": true,
   "scripts": {
     "dev": "next dev",
