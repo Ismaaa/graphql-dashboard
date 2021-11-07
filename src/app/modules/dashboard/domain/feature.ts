@@ -1,5 +1,5 @@
-type Quality = 'high' | 'medium' | 'low';
-type Parameter = {
+export type Quality = 'high' | 'medium' | 'low';
+export type Parameter = {
   name: string;
   value: number;
 };

@@ -1,7 +1,3 @@
-import type { NextPage } from 'next';
-
-const Home: NextPage = () => {
-  return <h1>Hello</h1>;
-};
+import Home from 'app/modules/dashboard/ui/Home';
 
 export default Home;
