@@ -11,6 +11,9 @@ const parameters = ['x', 'y', 'z', 'Length', 'Diameter'];
 const createParameter = (data: Partial<Parameter>): Parameter => ({
   name: oneOf(parameters),
   value: faker.datatype.number({
+    max: 15,
+  }),
+  accumulatedValue: faker.datatype.number({
     max: 50,
   }),
   ...data,

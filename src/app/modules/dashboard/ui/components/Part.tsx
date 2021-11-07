@@ -8,13 +8,11 @@ type Props = {
 
 const Part: FC<Props> = ({ part }) => {
   return (
-    <div>
-      <h1>Part {part.name}</h1>
-
-      {part.features.map((feature) => (
-        <Feature key={feature.name} feature={feature} />
+    <>
+      {part.features.map((feature, index) => (
+        <Feature key={`${index}-${feature.name}`} feature={feature} />
       ))}
-    </div>
+    </>
   );
 };
 
