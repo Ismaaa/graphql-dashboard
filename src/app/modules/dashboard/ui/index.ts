@@ -1,9 +1,9 @@
-import memoryDashboardRepository from 'app/modules/dashboard/infrastructure/api/memoryDashboardRepository';
 import app from 'app/modules/dashboard/application';
+import httpDashboardRepository from 'app/modules/dashboard/infrastructure/api/httpDashboardRepository';
 
 const repository = () => {
   return {
-    api: memoryDashboardRepository(),
+    api: httpDashboardRepository(),
   };
 };
 

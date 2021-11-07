@@ -1,8 +1,16 @@
 import { application } from 'app/modules/dashboard/ui/index';
 import Part from 'app/modules/dashboard/ui/components/Part';
+import { useEffect, useState } from 'react';
+import { Dashboard } from 'app/modules/dashboard/domain/dashboard';
 
 const Home = () => {
-  const data = application.getData();
+  const [data, setData] = useState<null | Dashboard>(null);
+
+  useEffect(() => {
+    application.getData().then((data) => setData(data));
+  }, []);
+
+  if (!data) return null;
 
   return (
     <div className="my-8 mx-auto max-w-7xl">

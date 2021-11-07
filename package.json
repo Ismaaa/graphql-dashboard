@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.4.16",
     "apollo-server-micro": "^3.5.0",
     "faker": "^5.5.3",
     "graphql": "^16.0.1",
