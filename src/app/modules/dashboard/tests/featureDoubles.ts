@@ -8,19 +8,26 @@ import { oneOf } from 'app/shared/tests/one-of';
 
 const parameters = ['x', 'y', 'z', 'Length', 'Diameter'];
 
-const createParameter = (): Parameter => ({
+const createParameter = (data: Partial<Parameter>): Parameter => ({
   name: oneOf(parameters),
   value: faker.datatype.number({
     max: 50,
   }),
+  ...data,
 });
 
 const create = (): Feature => ({
   name: oneOf<string>(['Seam', 'Slot', 'Hole']),
   quality: oneOf<Quality>(['high', 'medium', 'low']),
   parameters: Array.from(
-    { length: Math.floor(Math.random() * parameters.length) + 1 },
-    () => createParameter()
+    { length: Math.floor(Math.random() * (parameters.length * 2)) + 1 },
+    (_, i) => {
+      const index = i >= parameters.length ? i - parameters.length : i;
+
+      return createParameter({
+        name: parameters[index],
+      });
+    }
   ),
 });
 

@@ -1,11 +1,14 @@
 import { application } from 'app/modules/dashboard/ui/index';
+import Part from 'app/modules/dashboard/ui/components/Part';
 
 const Home = () => {
   const data = application.getData();
 
   return (
     <div>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      {data.parts.map((part) => (
+        <Part key={part.name} part={part} />
+      ))}
     </div>
   );
 };
